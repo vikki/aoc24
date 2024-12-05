@@ -12,17 +12,19 @@ export const compareHistorianVisitArrayList = (lists: ListOfLists): number => {
     const listA = lists[0].sort();
     const listB = lists[1].sort();
 
-    console.log('wat b4');
+    //console.log('wat b4');
     return listA.reduce((curr, prev, idx) => {
-        console.log({prev, curr});
+        //console.log({prev, curr});
         const diff = Math.abs(listA[idx] - listB[idx]); // dbl check need abs
-        console.log(listA[idx], listB[idx], {diff, prev});
+        //console.log(listA[idx], listB[idx], {diff, prev});
         return curr + diff;
     }, 0);
 };
 
 export const parseList = (listsAsStr: string): ListOfLists => {
-    const lines = listsAsStr.split(/\n\s+/, );
+    const lines = listsAsStr.split(/\n\s*/, );
+
+    //console.log(lines.slice(0, 5));
 
     const groupedLines: ListOfLists = [[], []];
 
