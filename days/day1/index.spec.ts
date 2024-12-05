@@ -1,4 +1,4 @@
-import { compareHistorianVisitLists, parseList } from ".";
+import { compareHistorianVisitArrayList, compareHistorianVisitLists, ListOfLists, parseList } from ".";
 
 describe('day 1', () => {
     it('compareHistorianVisitLists returns expected result when given example input', () => {
@@ -15,7 +15,17 @@ describe('day 1', () => {
         const actualOutput = compareHistorianVisitLists(exampleInput);
 
         expect(actualOutput).toEqual(expectedOutput);
-    })
+    });
+
+    describe('compareHistorianVisitArrayList', () => {
+        it('', () => {
+            const expectedOutput = 4;
+            const exampleInput: ListOfLists = [[2, 4], [7, 3]];
+            const actualOutput = compareHistorianVisitArrayList(exampleInput);
+            expect(actualOutput).toEqual(expectedOutput);
+
+        });
+    });
 
     describe('parseLists', () => {
         it('(singleline) splits input into 2 lists, taking 1 value from each line', () => {

@@ -1,8 +1,25 @@
 export const compareHistorianVisitLists = (listsAsStr: string): number => {
-    return -1;
+    const lists = parseList(listsAsStr);
+    return compareHistorianVisitArrayList(lists);
 };
 
-type ListOfLists = [number[], number[]];
+// should enforce that they are the same length
+// or maybe use an array of tuples which is way easier
+export type ListOfLists = [number[], number[]];
+
+export const compareHistorianVisitArrayList = (lists: ListOfLists): number => {
+    // TDD: throw if diff lengths
+    const listA = lists[0].sort();
+    const listB = lists[1].sort();
+
+    console.log('wat b4');
+    return listA.reduce((curr, prev, idx) => {
+        console.log({prev, curr});
+        const diff = Math.abs(listA[idx] - listB[idx]); // dbl check need abs
+        console.log(listA[idx], listB[idx], {diff, prev});
+        return curr + diff;
+    }, 0);
+};
 
 export const parseList = (listsAsStr: string): ListOfLists => {
     const lines = listsAsStr.split(/\n\s+/, );
