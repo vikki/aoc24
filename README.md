@@ -1,0 +1,1 @@
+🧑‍🎄 Working through Advent of Code 2024 (the other AOC :D)! https://adventofcode.com/2024/
