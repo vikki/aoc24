@@ -1,7 +1,7 @@
 import { safeReportCounts } from ".";
 import { reportIsSafe } from ".";
 
-describe.only('day 2', () => {
+describe('day 2', () => {
     describe('reportIsSafe: ', () => {
         it('Safe because the levels are all decreasing by 1 or 2.', () => {
             const row = '7 6 4 2 1';
